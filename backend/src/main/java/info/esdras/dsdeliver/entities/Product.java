@@ -7,7 +7,7 @@ import javax.persistence.Table;
 @Table(name = "tb_product")
 public class Product extends AbstractEntity<Long> {
 
-    private static final long serialversionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
     private String name;
     private Double price;
