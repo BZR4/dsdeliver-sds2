@@ -1,8 +1,11 @@
 package info.esdras.dsdeliver.dto;
 
+import info.esdras.dsdeliver.entities.Order;
 import info.esdras.dsdeliver.entities.Product;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 public class ProductDTO implements Serializable {
 
@@ -13,6 +16,8 @@ public class ProductDTO implements Serializable {
     private Double price;
     private String description;
     private String imageUri;
+
+    private Set<Order> orders = new HashSet<>();
 
     public ProductDTO() {
     }
@@ -76,5 +81,9 @@ public class ProductDTO implements Serializable {
     public ProductDTO setImageUri(String imageUri) {
         this.imageUri = imageUri;
         return this;
+    }
+
+    public Set<Order> getOrders() {
+        return orders;
     }
 }
