@@ -1,7 +1,10 @@
 package info.esdras.dsdeliver.entities;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "tb_product")
@@ -13,6 +16,9 @@ public class Product extends AbstractEntity<Long> {
     private Double price;
     private String description;
     private String imageUri;
+
+    @ManyToMany(mappedBy = "products")
+    private Set<Order> orders = new HashSet<>();
 
     public Product() {
     }
@@ -57,6 +63,15 @@ public class Product extends AbstractEntity<Long> {
 
     public Product setImageUri(String imageUri) {
         this.imageUri = imageUri;
+        return this;
+    }
+
+    public Set<Order> getOrders() {
+        return orders;
+    }
+
+    public Product setOrders(Set<Order> orders) {
+        this.orders = orders;
         return this;
     }
 

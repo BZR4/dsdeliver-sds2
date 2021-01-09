@@ -11,7 +11,7 @@ import java.util.Set;
 @Table(name = "tb_order")
 public class Order extends AbstractEntity<Long> {
 
-    private static final long serialversionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
     private String address;
     private Double latitude;

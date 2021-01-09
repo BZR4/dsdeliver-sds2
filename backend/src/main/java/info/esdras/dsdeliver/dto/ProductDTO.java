@@ -22,7 +22,7 @@ public class ProductDTO implements Serializable {
         name = product.getName();
         price = product.getPrice();
         description = product.getDescription();
-        imageUri = product.getDescription();
+        imageUri = product.getImageUri();
     }
 
     public ProductDTO(Long id, String name, Double price, String description, String imageUri) {
